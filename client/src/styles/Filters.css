@@ -1,0 +1,35 @@
+.Filters {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.filters-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.year {
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+.launch {
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+.landing {
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

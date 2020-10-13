@@ -1,0 +1,19 @@
+.App {
+  background-color: #f2f2f2;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+@media only screen and (min-width: 700px) {
+  .content {
+    flex-direction: row;
+  }
+}

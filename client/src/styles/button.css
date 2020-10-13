@@ -1,0 +1,15 @@
+.Button {
+  padding: 10px;
+  width: 50px;
+  background-color: #c7de9d;
+  margin: 10px;
+  text-align: center;
+}
+
+.Button-active {
+  background-color: #7aba00;
+  padding: 10px;
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+}
