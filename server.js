@@ -60,5 +60,5 @@ app.get('*', handleRender);
 
 // Start server
 app.listen(8080, () => {
-    console.log('server is running on port 3000')
+    console.log('server is running on port 8080')
 });
