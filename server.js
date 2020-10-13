@@ -59,6 +59,6 @@ app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
 app.get('*', handleRender);
 
 // Start server
-app.listen(3000, () => {
+app.listen(8080, () => {
     console.log('server is running on port 3000')
 });
