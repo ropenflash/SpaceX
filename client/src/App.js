@@ -71,10 +71,17 @@ class App extends Component {
           <Filters
             handleFilter={handleFilter}
           />
-          <Container
-            flights={flights}
-          />
+          <div>
+            <Container
+              flights={flights}
+            />
+            <div className="developer">
+              Developed By: <span>{"Rishab Gupta"}</span>
+            </div>
+          </div>
+
         </div>
+
       </div >
 
     );

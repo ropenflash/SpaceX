@@ -21,10 +21,10 @@ function Card({ flight }) {
                 {mission_name} #{flight_number}
             </div>
             <div className="card-body" >
-                <div>Mission Ids: {1}  </div>
-                <div>Launch Year: {launch_year}</div>
-                <div>Successful Launch: {launch_success && launch_success.toString()}</div>
-                <div>Successful Landing:{launch_landing}</div>
+                <div>Mission Ids:<span>{1} </span>   </div>
+                <div>Launch Year:<span> {launch_year}</span></div>
+                <div>Successful Launch:<span> {launch_success && launch_success.toString()}</span></div>
+                <div>Successful Landing:<span>{launch_landing}</span></div>
             </div>
         </div >
     )

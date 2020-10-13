@@ -12,6 +12,14 @@
   font-weight: bold;
   margin-left: 10px;
 }
+
+.developer {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px auto;
+  word-break: break-word;
+  width: 50%;
+}
 @media only screen and (min-width: 700px) {
   .content {
     flex-direction: row;

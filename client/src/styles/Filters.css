@@ -4,6 +4,7 @@
   background: white;
   padding: 10px;
   margin: 10px;
+  height: 90%;
 }
 
 .filters-title {
@@ -32,4 +33,5 @@
 .controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
