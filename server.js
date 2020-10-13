@@ -12,14 +12,11 @@ import axios from 'axios'
 
 function handleRender(req, res) {
     // Renders our Hello component into an HTML string
-    console.log('req url', req.url)
-    console.log(req.query)
     const { year, launchSuccess, landSuccess } = req.query
     const yr = year ? `&launch_year=${year}` : ""
     const launch = launchSuccess === "true" ? "&launch_success=true" : ""
     const land = landSuccess === "true" ? "&land_success=true" : ""
     const url = `https://api.spacexdata.com/v3/launches?limit=100${yr}${launch}${land}`
-    console.log('url is', url)
 
     axios.get(url)
         .then(response => {
@@ -30,7 +27,6 @@ function handleRender(req, res) {
                 launch: launchSuccess || '',
                 land: landSuccess || ""
             }
-            console.log('initial data is ', initialData)
             const html = ReactDOMServer.renderToString(
                 <StaticRouter location={req.url}>
                     <App initialData={initialData} />
