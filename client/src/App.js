@@ -39,7 +39,7 @@ class App extends Component {
     if (year !== this.state.year
       || launch !== this.state.launch
       || land !== this.state.land) {
-      console.log('i am changing')
+
       const yearFilter = year ? `&launch_year=${year}` : ""
       const launchFilter = launch === "true" ? "&launch_success=true" : ""
       const landFilter = land === "true" ? "&land_success=true" : ""
