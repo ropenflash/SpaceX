@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 import './styles/App.css'
 import Container from './components/Container'
@@ -41,8 +40,8 @@ class App extends Component {
       || land !== this.state.land) {
 
       const yearFilter = year ? `&launch_year=${year}` : ""
-      const launchFilter = launch === "true" ? "&launch_success=true" : ""
-      const landFilter = land === "true" ? "&land_success=true" : ""
+      const launchFilter = launch ? `&launch_success=${launch}` : ""
+      const landFilter = land ? `&land_success=${land}` : ""
       axios.get(`https://api.spacexdata.com/v3/launches?limit=100${yearFilter}${launchFilter}${landFilter}`)
         .then(res => { this.setState({ flights: res.data }) })
 
@@ -55,10 +54,11 @@ class App extends Component {
 
       this.setState({ [filterType]: filterValue }, () => {
         const { year, launch, land } = this.state
-        const yearFilter = year ? `year=${year}` : ""
-        const launchFilter = launch === "true" ? "&launchSuccess=true" : ""
-        const landFilter = land === "true" ? "&landSuccess=true" : ""
-        window.history.pushState({}, "", `filter?${yearFilter}${launchFilter}${landFilter}`)
+        const yearFilter = year ? `launch_year=${year}` : ""
+        const launchFilter = launch ? `&launch_success=${launch}` : ""
+        const landFilter = land ? `&land_success=${land}` : ""
+        this.props.history.push(`filter?${yearFilter}${launchFilter}${landFilter}`)
+
       })
     }
 
@@ -70,8 +70,11 @@ class App extends Component {
         <div className="content">
           <Filters
             handleFilter={handleFilter}
+            year={this.state.year}
+            land={this.state.land}
+            launch={this.state.launch}
           />
-          <div>
+          <div className="information">
             <Container
               flights={flights}
             />

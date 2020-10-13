@@ -12,20 +12,21 @@ import axios from 'axios'
 
 function handleRender(req, res) {
     // Renders our Hello component into an HTML string
-    const { year, launchSuccess, landSuccess } = req.query
-    const yr = year ? `&launch_year=${year}` : ""
-    const launch = launchSuccess === "true" ? "&launch_success=true" : ""
-    const land = landSuccess === "true" ? "&land_success=true" : ""
-    const url = `https://api.spacexdata.com/v3/launches?limit=100${yr}${launch}${land}`
+    const { launch_year, launch_success, land_success } = req.query
+    const year = launch_year ? `&launch_year=${launch_year}` : ""
+    const launch = launch_success ? `&launch_success=${launch_success}` : ""
+    const land = land_success ? `&land_success=${land_success}` : ""
+
+    const url = `https://api.spacexdata.com/v3/launches?limit=100${year}${launch}${land}`
 
     axios.get(url)
         .then(response => {
             const data = response.data
             const initialData = {
                 flights: data,
-                year: year || '',
-                launch: launchSuccess || '',
-                land: landSuccess || ""
+                year: launch_year || '',
+                launch: launch_success || '',
+                land: land_success || ""
             }
             const html = ReactDOMServer.renderToString(
                 <StaticRouter location={req.url}>

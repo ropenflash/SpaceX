@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM, { hydrate } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { hydrate } from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 
 import './index.css';
@@ -10,7 +10,9 @@ import App from './App';
 
 hydrate(
   <BrowserRouter>
-    <App />
+    <Switch>
+      <Route path='/' component={App} />
+    </Switch>
   </BrowserRouter>,
   document.getElementById('root')
 );

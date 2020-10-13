@@ -5,7 +5,7 @@ function Card({ flight }) {
 
     const { launch_success,
         launch_year,
-        launch_landing,
+        land_success,
         mission_name,
         flight_number,
         mission_id,
@@ -15,7 +15,7 @@ function Card({ flight }) {
     return (
         <div className="card">
             <div className="card-header">
-                <img className="card-image" src={mission_patch_small} />
+                <img className="card-image" src={mission_patch_small} alt={mission_name} />
             </div>
             <div className="card-title">
                 {mission_name} #{flight_number}
@@ -24,7 +24,7 @@ function Card({ flight }) {
                 <div>Mission Ids:<span>{1} </span>   </div>
                 <div>Launch Year:<span> {launch_year}</span></div>
                 <div>Successful Launch:<span> {launch_success && launch_success.toString()}</span></div>
-                <div>Successful Landing:<span>{launch_landing}</span></div>
+                <div>Successful Landing:<span>{land_success && land_success.toString()}</span></div>
             </div>
         </div >
     )

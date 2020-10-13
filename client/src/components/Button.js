@@ -5,18 +5,12 @@ import '../../src/styles/button.css'
 const blockName = "Button"
 function Button(props) {
 
-    const { btnText, setValue, arr, objSetter, checked, urlDesignator } = props
+    const { btnText, setValue, checked, urlDesignator } = props
+
+
     const handleClick = (e, btnText) => {
         e.preventDefault()
-        const newArr = arr.map(item => {
-            if (item.value.toString() === btnText) {
-                return { value: item.value, checked: true }
-            }
-            else {
-                return { value: item.value, checked: false }
-            }
-        })
-        objSetter(newArr)
+        // objSetter(newArr)
         setValue(urlDesignator, btnText)
 
     }
