@@ -19,7 +19,7 @@ function Button(props) {
     return (
         <a className={`${blockName}${btnActive}`}
             onClick={(e) => { handleClick(e, btnText) }}
-            href={`/${btnText}`}
+            href={`#`}
         >
             { btnText}
         </a >
