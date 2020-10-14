@@ -55,9 +55,9 @@ class App extends Component {
       this.setState({ [filterType]: filterValue }, () => {
         const { year, launch, land } = this.state
         const yearFilter = year ? `launch_year=${year}` : ""
-        const launchFilter = launch ? `&launch_success=${launch}` : ""
-        const landFilter = land ? `&land_success=${land}` : ""
-        this.props.history.push(`filter?${yearFilter}${launchFilter}${landFilter}`)
+        const launchFilter = launch ? `launch_success=${launch}` : ""
+        const landFilter = land ? `land_success=${land}` : ""
+        this.props.history.push(`filter?${yearFilter}${year && launch ? "&" : ""}${launchFilter}${(year || launch) && land ? "&" : ""}${landFilter}`)
 
       })
     }
