@@ -24,8 +24,8 @@ class App extends Component {
   componentDidMount() {
     const { year, launch, land } = this.state
     const yearFilter = year ? `&launch_year=${year}` : ""
-    const launchFilter = launch === "true" ? "&launch_success=true" : ""
-    const landFilter = land === "true" ? "&land_success=true" : ""
+    const launchFilter = launch ? `&launch_success=${launch}` : ""
+    const landFilter = land ? `&land_success=${land}` : ""
     axios.get(`https://api.spacexdata.com/v3/launches?limit=100${yearFilter}${launchFilter}${landFilter}`)
       .then(res => {
         this.setState({ flights: res.data })

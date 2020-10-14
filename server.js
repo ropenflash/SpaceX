@@ -16,8 +16,8 @@ function handleRender(req, res) {
     const year = launch_year ? `&launch_year=${launch_year}` : ""
     const launch = launch_success ? `&launch_success=${launch_success}` : ""
     const land = land_success ? `&land_success=${land_success}` : ""
-
     const url = `https://api.spacexdata.com/v3/launches?limit=100${year}${launch}${land}`
+
 
     axios.get(url)
         .then(response => {
