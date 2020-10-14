@@ -39,17 +39,5 @@
 }
 .card-body ul {
   list-style: disc;
-  margin-left: 40px;
-}
-@media only screen and (min-width: 700px) {
-  .card {
-    height: 450px;
-    width: 300px;
-  }
-
-  .card-image {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-  }
+  margin-left: 4 0px;
 }
