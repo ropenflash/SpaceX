@@ -67,16 +67,17 @@ class App extends Component {
 
       <div className="App">
         <div className="title">SpaceX Launch Programs</div>
-        <div className="content">
+        <div className="content" tabIndex={2}>
           <Filters
             handleFilter={handleFilter}
             year={this.state.year}
             land={this.state.land}
             launch={this.state.launch}
           />
-          <div className="information">
+          <div className="information" tabIndex={1}>
             <Container
               flights={flights}
+              land={this.state.land}
             />
             <div className="developer">
               Developed By: <span>{"Rishab Gupta"}</span>

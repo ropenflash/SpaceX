@@ -12,6 +12,7 @@ import axios from 'axios'
 
 function handleRender(req, res) {
     // Renders our Hello component into an HTML string
+
     const { launch_year, launch_success, land_success } = req.query
     const year = launch_year ? `&launch_year=${launch_year}` : ""
     const launch = launch_success ? `&launch_success=${launch_success}` : ""
@@ -57,7 +58,11 @@ const app = express();
 // app.use('/build', express.static(path.join(__dirname, 'client/build')));
 app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
 // Serve requests with our handleRender function
-app.get('*', handleRender);
+app.get('/', handleRender);
+app.get('/filter', handleRender);
+app.get('*', (req, res) => {
+    res.status(404).send('Page Not Found')
+})
 
 // Start server
 app.listen(process.env.PORT || 8080, () => {

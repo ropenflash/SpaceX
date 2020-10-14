@@ -37,7 +37,10 @@
 .card-body > div > span {
   color: #9497b1;
 }
-
+.card-body ul {
+  list-style: disc;
+  margin-left: 40px;
+}
 @media only screen and (min-width: 700px) {
   .card {
     height: 450px;
